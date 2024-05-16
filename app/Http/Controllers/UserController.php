@@ -61,6 +61,7 @@ class UserController extends Controller
     {
         $req->validate([
             'name' => 'required',
+            'cpf' => 'required|cpf|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
         ]);
